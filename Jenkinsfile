@@ -4,13 +4,13 @@ node {
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
 
-        checkout master
+        env.GIT_CHECKOUT = sh(script: "git checkout master", returnStdout: true).trim()
+        echo env.GIT_CHECKOUT
     }
 
     stage('Build package') {
-        steps {
-            sh 'mvn -B -DskipTests clean package'
-        }
+       env.BUILD_PACKAGE = sh(script: "mvn -B -DskipTests clean package", returnStdout: true).trim()
+       echo env.BUILD_PACKAGE
     }
 
     stage('Build image') {
