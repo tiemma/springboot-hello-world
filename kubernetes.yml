@@ -1,12 +1,37 @@
 
 apiVersion: v1
-kind: Pod
+kind: Service
 metadata:
-  name: spring-hello-world
+  name: hello-service
 spec:
-  containers:
-  - name: spring-hello-world
-    image: tiemma/session:0.0.1-SNAPSHOT
-    ports:
-    - containerPort: 8080
+  selector:
+    run: hello-deployment
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 9000
+    name: http
+  type: LoadBalancer
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-deployment
+spec:
+  selector:
+    matchLabels:
+      run: hello-deployment
+  replicas: 4
+  template:
+    metadata:
+      labels:
+        run: hello-deployment
+    spec:
+      containers:
+      - name: session
+        image: tiemma/session:0.0.1-SNAPSHOT
+        ports:
+        - containerPort: 8080
 

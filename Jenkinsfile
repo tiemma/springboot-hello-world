@@ -2,7 +2,7 @@ pipeline {
     /*
     Running this in a docker image to
     unify the build process on any PC
-    so there any missing dependencies
+    so there are no missing dependencies
     or faulty user configurations.
     */
     agent {
@@ -19,7 +19,7 @@ pipeline {
         configurations
         */
             steps {
-                sh 'mvn  clean package'
+                sh 'mvn -B -DskipTests  clean package'
             }
         }
     }
