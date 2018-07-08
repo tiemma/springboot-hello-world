@@ -1,15 +1,4 @@
 pipeline {
-    /*
-    Running this in a docker image to
-    unify the build process on any PC
-    so there are no missing dependencies
-    or faulty user configurations.
-    */
-    agent {
-        docker {
-            image 'maven:3-alpine'
-        }
-    }
     stages {
         stage('Build Package and Image') {
         /*
