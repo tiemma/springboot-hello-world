@@ -16,8 +16,7 @@ To build the project, kindly run
 
 > mvn package
 
-This would build the entire project due to the aid of the dockerfile-maven-plugin from spotify which allows one to bind the 
-docker build and push process to a maven build process.
+This would build the entire project into a docker image due to the aid of the dockerfile-maven-plugin from spotify which allows one to bind the docker build and push process to a maven build process.
 
 ## Building with Jenkins
 ---
