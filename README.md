@@ -48,14 +48,20 @@ This would build the entire project into a docker image due to the aid of the do
  
 What are the requirements for this project to build on my local jenkins node?
   - The following are requirements once should have installed to do the build locally
-    - Docker (Kindly make sure the jenkins user is in the docker group)
+  
+    - Docker 
+    
+    (Kindly make sure the jenkins user is in the docker group)
     
     > sudo usermod -aG docker jenkins
+    
     > sudo service jenkins restart (Restart the jenkins node)
     
     That will enable the jenkins node access docker
     
     - Maven 
+    
+    
   The entire build process is dependent on that
   
 What are the new changes planned to implement?
