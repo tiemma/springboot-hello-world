@@ -46,6 +46,19 @@ This would build the entire project into a docker image due to the aid of the do
  
  ## FAQ
  
+How would my docker client know what details to use?
+  - Be sure to either do a 
+    
+    - Login into your docker registry hub using *docker login*
+    
+    OR 
+    
+    - Add your custom repository details to a settings.xml file
+    
+    Use the [settings-sample.xml](settings-sample.xml) file to create the settings.xml file and put in your details accordingly
+    
+    ### NOTE: The id is not the docker repository, kindly check the pom.xml file or [here](https://github.com/spotify/dockerfile-maven)
+ 
 What are the requirements for this project to build on my local jenkins node?
   - The following are requirements once should have installed to do the build locally
   
