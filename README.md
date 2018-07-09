@@ -29,6 +29,20 @@ docker build and push process to a maven build process.
  
  A kubernetes file has been added which will setup the replicas and start the service automatically.
  
+ To create the deployment and service, you'd be needing two things to test locally:
+
+
+ minikube
+   - A local kubernetes node 
+   
+ kubectl
+   - The kubernetes command line tool
+   
+   
+ Once both are setup, you can deploy it using the command below:
+ 
+ > kubectl create -f [kubernetes.yml](kubernetes.yml)
+ 
  A load balancer setup was done so a cloud provider (AWS, Google Cloud) or a local ingress setup would be needed to get access to the service.
  
  ## FAQ
