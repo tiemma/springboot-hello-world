@@ -11,11 +11,11 @@ spec:
     port: 80
     targetPort: 8080
     name: http
-  type: LoadBalancer
+  type: NodePort
 
 ---
 
-apiVersion: v1
+apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: hello-deployment
@@ -31,7 +31,7 @@ spec:
     spec:
       containers:
       - name: session
-        image: tiemma/session:0.0.1-SNAPSHOT
+        image: repo.isw.la/springboot-hello-world-test:1.0.10
         ports:
         - containerPort: 8080
 
